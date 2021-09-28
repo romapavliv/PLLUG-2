@@ -13,3 +13,5 @@ rl.question(`Enter your text: `, (text) => {
     console.log(`Your text after processing: ${text}`);
     rl.close();
 });
+
+Можна виконати простіше без додаткових модулів.
