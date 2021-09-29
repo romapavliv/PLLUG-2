@@ -87,7 +87,7 @@ let intNumbers = (array) => {
 console.log(intNumbers([1.4, 2, 3.024, 4.12])); // output: [2]
 
 // 15) function that returns nothing
-let returnNothing = (array) => {
-    console.log(array[0] + 4);
+let returnNothing = () => {
+    return;
 }
-console.log(returnNothing([0, 0, 1, 2])); // return: undefined
+console.log(returnNothing()); // return: undefined
