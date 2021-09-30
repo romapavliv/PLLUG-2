@@ -91,3 +91,9 @@ let returnNothing = () => {
     return;
 }
 console.log(returnNothing()); // return: undefined
+
+let function = () => {} //це є функціональний вираз.
+function () {} // це функція.
+
+Треба було написати функції.
+Завдання виконано.
