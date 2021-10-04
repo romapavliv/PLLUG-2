@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hw4_part2</title>
+</head>
+<body>
+    <!-- 1) Скрипт, який виводить в консоль дату і час, коли DOM побудований, 
+        але css, зображення ще не завантажились. -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentDate = new Date();
+            console.log('DOM is ready on: ' + currentDate.toString());
+        })
+    </script>
+
+    <!-- 2) Скрипт, який виводить в консоль дату і час, коли DOM побудований 
+            і css, зображення вже завантажились. -->
+    <script>
+        window.onload = function () {
+            var starTime; //для 6 завдання
+            const currentDate = startTime = new Date();
+            console.log('DOM, CSS and pictures are ready on: ' + currentDate.toString());
+        };
+    </script>
+
+    <!-- 3) Скрипт, який виводить в консоль дату і час, коли юзер натиснув 
+            на закрити вкладку або перезавантажити сторінку. -->
+    <script>
+        window.onbeforeunload = function () {
+            const currentDate = new Date();
+            console.log('Close or reload page on: ' + currentDate.toString());
+        };
+    </script>
+
+    <!-- 4) Скрипт, який повертає назву браузера та 
+            назву операційної системи через дефіс "-" як одну строку. -->
+    <script>
+        function browserAndOs() {
+            let result = '';
+            if (navigator.userAgent.indexOf('Chrome') > -1)
+                result = 'Google Chrome';
+            else if (navigator.userAgent.indexOf('Firefox') > -1)
+                result = 'Mozilla Firefox';
+            else if (navigator.userAgent.indexOf('Opera') > -1 || navigator.userAgent.indexOf('OPR') > -1)
+                result = 'Opera';
+            else if (navigator.userAgent.indexOf('Edge') > -1)
+                result = 'Microsoft Edge';
+            else if (navigator.userAgent.indexOf('Safari') > -1)
+                result = 'Safari';
+            else if (navigator.userAgent.indexOf('Trident') > -1 || navigator.userAgent.indexOf('MSIE') > -1)
+                result = 'Microsoft Internet Explorer';
+            else
+                result = 'Other browser';
+
+            result += '-';
+
+            if (navigator.appVersion.indexOf('Win') > -1)
+                result += 'Windows';
+            else if (navigator.appVersion.indexOf('Linux') > -1)
+                result += 'Linux';
+            else if (navigator.appVersion.indexOf('Mac') > -1)
+                result += 'MacOS';
+
+            console.log(result);
+        }
+        browserAndOs();
+    </script>
+
+    <!-- 5) Скрипт, який змушує браузер показувати сповіщення, коли ви намагаєтесь 
+        перезавантажити сторінку, видалити вкладку чи вимкнути браузер. 
+        і 6) Скрипт, який виводить в консоль скільки секунд юзер перебував на сторінці, 
+        після того як юзер натиснув на закрити вкладку або перезавантажити сторінку. -->
+
+    <script>
+        window.onbeforeunload = function () {
+            const endTime = new Date();
+            return 'You were on this page ' + (endTime - startTime)/1000 + ' seconds.';
+        }
+    </script>
+
+</body>
+</html>
