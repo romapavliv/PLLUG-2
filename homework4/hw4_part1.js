@@ -1,9 +1,7 @@
 // 1) Створити функцію, яка б отримувала параметром масив з елементів різних типів, 
 // на виході має повернути строку у camel case, яка б поєднувала в собі всі елементи масиву, які є строками.
 function func1(array) {
-    let strings = array.filter(element => typeof(element) === 'string');
-    strings = strings.map((element, index) => index > 0 ? element[0].toUpperCase() + element.slice(1) : element);
-    return strings.join('');
+    return array.filter(element => typeof(element) === 'string').map((element, index) => index > 0 ? element[0].toUpperCase() + element.slice(1) : element).join('');
 }
 
 // 2) Створити функцію, яка отримує параметром масив цілих чисел 1 <= value <= 26, 
