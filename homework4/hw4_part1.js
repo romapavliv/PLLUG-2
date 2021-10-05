@@ -16,3 +16,6 @@ function func2(array) {
 function func3(obj) {
     return Object.entries(obj).filter(([key, value]) => typeof(value) === 'number' && value >= 0);
 }
+
+Завдання виконано, але назви функцій мають приблизно відображати те що вони виконують
+function func1 приблизно можна назвати function makeCamelCase і т.д.
