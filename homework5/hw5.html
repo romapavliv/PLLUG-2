@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="animals">
+            <li class="pet">Dog</li>
+            <li id="cat" class="pet">Cat</li>
+            <li class="wild">Elephant</li>
+            <li class="wild">Whale</li>
+            <li class="wild">Horse</li>
+            <li class="wild dangerous">Tiger</li>
+        </ul>
+        <ul id="birds">
+            <li class="wild">Eagle</li>
+            <li class="wild">Sparrow</li>
+            <li class="pet wild">Parrot</li>
+        </ul>
+    </div>
+
+    <script>
+        // ЧАСТИНА 1
+
+        //1) Функція, яка збільшує розмір шрифту всіх елементів списку animals
+        function increaseFont() {
+            document.getElementById("animals").querySelectorAll("li").forEach(element => element.style.fontSize = "20pt");
+        }
+
+        // 2) Функція, яка видаляє всі класи останнього елемента списку animals
+        function deleteAllClasses() {
+            document.getElementById("animals").lastElementChild.removeAttribute("class");
+        }
+
+        // 3) Функція, яка змінює background-color наступного елемента після елемента з id="cat"
+        function changeBackgroundColor() {
+            document.querySelector("#cat").nextElementSibling.style.backgroundColor = "pink";
+        }
+
+        // 4) Функція, яка змінює колір тексту на червоний всім елементам які мають клас dangerous
+        function changeTextColor() {
+            document.querySelectorAll(".dangerous").forEach(element => element.style.color = "red");
+        }
+
+        // 5) Функція, яка видаляє всі елементи, які мають клас pet, але якщо крім класу pet є ще інші класи, то вони повинні залишитись
+        function deleteElementsWithPetClass() {
+            document.querySelectorAll(".pet").forEach(element => { if (element.classList.length === 1) element.remove(); });
+        }
+
+        // 6) Функція, яка додає новий елемент в список birds - після цього це має бути список, у якому новий елемент є першим
+        function addFirstElementToBirdsList() {
+            let newElement = document.createElement("li");
+            newElement.innerText = "Crow";
+            document.getElementById("birds").insertBefore(newElement, document.getElementById("birds").firstChild);
+        }
+
+        // ЧАСТИНА 2
+
+        // 1) Функція, яка додає додає новий елемент в список birds - після цього це має бути список, у якому новий елемент є останнім
+        function addLastElementToBirdsList() {
+            let newElement = document.createElement("li");
+            newElement.innerText = "Crow";
+            document.getElementById("birds").appendChild(newElement);
+        }
+
+        // 2) Функція, яка додає додає новий список id="fish" перед списком birds
+        function addNewListBeforeBirdsList() {
+            let newList = document.createElement("ul");
+            newList.setAttribute("id", "fish");
+            document.getElementById("birds").parentElement.insertBefore(newList, document.getElementById("birds"));
+        }
+
+        // 3) Функція, яка змінює порядок елементів в списку animals - останній елемент стає першим, передостанній  - другим, і т.д.
+        function reverseElementsOrder() {
+            let array = Array.prototype.slice.call(document.getElementById("animals").querySelectorAll("li")).reverse();
+            document.getElementById("animals").innerHTML = "";
+            array.map(node => document.getElementById("animals").appendChild(node));
+        }
+
+        // 4) Функція, яка перетворює класи елементів списку animals і додає до цих елементів data-* атрибути з назвою класу, який був прибраний. 
+        // Наприклад: <li class="wild dangerous">Tiger</li> => <li data-wild data-dangerous>Tiger</li>
+        function addDataToClassNames() {
+            document.getElementById("animals").querySelectorAll("li").forEach(element => {
+                let tempName = "";
+                element.classList.forEach(name => tempName += "data-" + name + " ");
+                element.className = tempName.slice(0, -1);
+            });
+        }
+    </script>
+</body>
+
+</html>
