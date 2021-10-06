@@ -27,7 +27,7 @@
 
         //1) Функція, яка збільшує розмір шрифту всіх елементів списку animals
         function increaseFont() {
-            document.getElementById("animals").querySelectorAll("li").forEach(element => element.style.fontSize = "20pt");
+            document.getElementById("animals").style.fontSize = "20pt";
         }
 
         // 2) Функція, яка видаляє всі класи останнього елемента списку animals
@@ -62,7 +62,7 @@
         // 1) Функція, яка додає додає новий елемент в список birds - після цього це має бути список, у якому новий елемент є останнім
         function addLastElementToBirdsList() {
             let newElement = document.createElement("li");
-            newElement.innerText = "Crow";
+            newElement.innerText = "Dove";
             document.getElementById("birds").appendChild(newElement);
         }
 
@@ -76,17 +76,15 @@
         // 3) Функція, яка змінює порядок елементів в списку animals - останній елемент стає першим, передостанній  - другим, і т.д.
         function reverseElementsOrder() {
             let array = Array.prototype.slice.call(document.getElementById("animals").querySelectorAll("li")).reverse();
-            document.getElementById("animals").innerHTML = "";
-            array.map(node => document.getElementById("animals").appendChild(node));
+            document.getElementById("animals").replaceChildren(...array);
         }
 
         // 4) Функція, яка перетворює класи елементів списку animals і додає до цих елементів data-* атрибути з назвою класу, який був прибраний. 
         // Наприклад: <li class="wild dangerous">Tiger</li> => <li data-wild data-dangerous>Tiger</li>
-        function addDataToClassNames() {
+        function addDataAttributes() {
             document.getElementById("animals").querySelectorAll("li").forEach(element => {
-                let tempName = "";
-                element.classList.forEach(name => tempName += "data-" + name + " ");
-                element.className = tempName.slice(0, -1);
+                element.classList.forEach(name => element.setAttribute("data-" + name, ""));
+                element.removeAttribute("class");
             });
         }
     </script>
