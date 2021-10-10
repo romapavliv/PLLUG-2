@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homework_6</title>
+    <style type="text/css">
+        .inputs {
+            margin-top: 5px;
+            width: 96%;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="userdata" action="javascript:addNewComment();" style="width: 210px;">
+        <label for="nickname">Nickname:</label><br />
+        <input id="nickname" class="inputs" type="text" onkeydown="return /[a-zA-Z0-9]/.test(event.key)"
+            placeholder="Enter your nickname" /><br /><br />
+        <label for="name">Name:</label><br />
+        <input id="name" class="inputs" type="text" onkeydown="return /[a-zA-Z]/.test(event.key)"
+            placeholder="Enter your name" /><br /><br />
+        <label for="textarea">Comment:</label><br />
+        <textarea id="textarea" class="inputs" rows="4" onkeydown="return /[a-zA-Z .,!?]/.test(event.key)"
+            placeholder="Enter your comment"></textarea><br /><br />
+        <button id="addComment" disabled style="margin-left: 25%;"> Add comment </button><br />
+    </form>
+
+    <div id="allComments" style="margin-top: 30px;">
+        <p style="font-size: 17px;"><b>All comments:</b></p>
+    </div>
+
+    <script>
+        const nickName = document.querySelector("#nickname");
+        const name = document.querySelector("#name");
+        const textArea = document.querySelector("#textarea");
+        const addCommentButton = document.querySelector("#addComment");
+
+        // variables that check if each input's value is correct 
+        let nickNameChecked = new Boolean("false");
+        let nameChecked = new Boolean("false");
+        let textAreaChecked = new Boolean("false");
+
+        // function that checks if all inputs are correct and then enables or disables the 'add comment' button
+        function enableButton() {
+            return (nickNameChecked === true && nameChecked === true && textAreaChecked === true) ? addCommentButton.disabled = false : addCommentButton.disabled = true;
+        }
+
+        // adds a red border to the nickname's input field if at least one of the conditions is not kept
+        nickName.addEventListener("input", (element) => {
+            if (element.target.value.length < 3 || element.target.value.length > 24 || !(/[a-zA-Z]/.test(element.target.value))) {
+                nickName.style.border = "2px solid red";
+                nickNameChecked = false;
+                addCommentButton.disabled = true;
+            }
+            else {
+                nickName.style.border = "1px solid black";
+                nickNameChecked = true;
+                enableButton();
+            }
+        });
+
+        // adds a red border to the name's input field if at least one of the conditions is not kept
+        name.addEventListener("input", (element) => {
+            if (element.target.value.length < 1 || element.target.value.length > 100 || !(element.target.value.match("^[a-zA-Z]+$"))) {
+                name.style.border = "2px solid red";
+                nameChecked = false;
+                addCommentButton.disabled = true;
+            }
+            else {
+                name.style.border = "1px solid black";
+                nameChecked = true;
+                enableButton();
+            }
+        });
+
+        // adds a red border to the textArea's input field if at least one of the conditions is not kept
+        textArea.addEventListener("input", (element) => {
+            if (element.target.value.length < 1 || element.target.value.length > 1000 || !(element.target.value.match("^[a-zA-Z .,!?]+$"))) {
+                textArea.style.border = "2px solid red";
+                textAreaChecked = false;
+                addCommentButton.disabled = true;
+            }
+            else {
+                textArea.style.border = "1px solid black";
+                textAreaChecked = true;
+                enableButton();
+            }
+        });
+
+        // adds a new comment block in format:
+        // nickname - name
+        // comment
+        // to the begining of the comments' list
+        function addNewComment(event) {
+            const newComment = document.createElement("li");
+            newComment.innerHTML = `<p>${nickName.value} - ${name.value}<br />${textArea.value}</p>`;
+            if (!document.querySelector("#commentsList")) {
+                const newList = document.createElement("ul");
+                newList.setAttribute("id", "commentsList");
+                newList.style.listStyleType = "none";
+                newList.style.paddingLeft = "0px";
+                newList.appendChild(newComment);
+                document.querySelector("#allComments").appendChild(newList);
+            }
+            else {
+                const list = document.querySelector("#commentsList");
+                list.insertBefore(newComment, list.firstElementChild);
+            }
+        };
+    </script>
+</body>
+
+</html>
