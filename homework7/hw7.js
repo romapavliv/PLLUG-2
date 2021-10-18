@@ -87,3 +87,5 @@ function objectToMap(object) {
 function mapToObject(_map) {
     return Object.fromEntries(_map);
 }
+
+Завдання виконано.
