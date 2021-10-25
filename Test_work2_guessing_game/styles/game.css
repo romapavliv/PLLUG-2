@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/game/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    visibility: visible;
+}
+
+#left_block {
+    flex: 20%;
+    height: 100%;
+}
+
+#time_and_steps {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#steps {
+    flex: 45%;
+    width: 90%;
+    padding-left: 1vw;
+    display: flex;
+    align-items: flex-end;
+}
+
+#timer {
+    flex: 55%;
+    width: 90%;
+    padding-left: 1vw;
+    display: flex;
+    align-items: flex-start;
+}
+
+.game_info {
+    font-family: 'Henny Penny', cursive;
+    font-size: 2vw;
+    font-weight: bold;
+    color: #d9d9eb;
+    text-shadow: 2px 2px 3px #000000;
+    letter-spacing: 2px;
+}
+
+#center_block {
+    flex: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#right_block {
+    flex: 20%;
+    height: 100%;
+}
+
+#game {
+    height: 95%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 24%);
+    grid-gap: 1.3%;
+}
+
+#game_results {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-image: url('../images/game/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    visibility: hidden;
+}
+
+#darker_background {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000c0;
+}
+
+#message_box {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #47495a;
+    border-radius: 2vw;
+}
+
+#message_box p {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    font-family: 'Henny Penny', cursive;
+    font-size: 1.5vw;
+    color: #fee958;
+    text-shadow: 1px 1px 2px #331818;
+    letter-spacing: 2px;
+}
+
+#message_box button {
+    height: 20%;
+    width: 40%;
+    font-family: 'Henny Penny', cursive;
+    font-size: 1.5vw;
+    color: #fee958;
+    background-color: #f14a3c;
+    text-shadow: 1px 1px 2px #331818;
+    border-radius: 2vw;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+#message_box button:hover {
+    cursor: pointer;
+    background-color: #d1392b;
+    color: #f1da42;
+}
+
+.game-cell {
+    display: inline-block;
+    background-color: #8b88b9;
+    border-radius: 1vw;
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/game/closed_cell.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform-style: preserve-3d;
+    transition: all 0.4s ease-in-out;
+}
+
+.game-cell:hover {
+    cursor: pointer;
+    background-size: 55%;
+}
+
+.cell1 {
+    background-image: url('../images/game/skull.png');
+    background-color: #58c5e1;
+    transform: rotateY(180deg);
+}
+
+.cell2 {
+    background-image: url('../images/game/pumpkin.png');
+    background-color: #fee958;
+    transform: rotateY(180deg);
+}
+
+.cell3 {
+    background-image: url('../images/game/cat.png');
+    background-color: #873b84;
+    transform: rotateY(180deg);
+}
+
+.cell4 {
+    background-image: url('../images/game/flame.png');
+    background-color: #f13b2b;
+    transform: rotateY(180deg);
+}
+
+.cell5 {
+    background-image: url('../images/game/grim-reaper.png');
+    background-color: #2c7591;
+    transform: rotateY(180deg);
+}
+
+.cell6 {
+    background-image: url('../images/game/apple.png');
+    background-color: #ff4a5c;
+    transform: rotateY(180deg);
+}
+
+.cell7 {
+    background-image: url('../images/game/spider.png');
+    background-color: #f57b54;
+    transform: rotateY(180deg);
+}
+
+.cell8 {
+    background-image: url('../images/game/potion.png');
+    background-color: #a66db8;
+    transform: rotateY(180deg);
+}

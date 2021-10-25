@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#start_form_block {
+    height: fit-content;
+    width: 30%;
+    text-align: center;
+}
+
+#start_form label{
+    font-family: 'Henny Penny', cursive;
+    font-size: 3.5vw;
+    color: #f38763;
+    text-shadow: 2px 2px 3px #3f191d;
+    font-weight: bold;
+}
+
+#start_form input{
+    box-sizing: border-box;
+    width: 100%;
+    height: 4.5vw;
+    margin: 1vw 0;
+    text-align: center;
+    border-radius: 0.4vw;
+    border: none;
+    font-family: 'Henny Penny', cursive;
+    font-size: 1.8vw;
+    letter-spacing: 1px;
+    background-color: #d9d9eb;
+    color: #331818;
+    font-weight: bold;
+}
+
+#start_form input:focus{
+    outline: none;
+}
+
+#start_form input::placeholder{
+    color: #8b8b9e;
+    font-size: 1.5vw;
+    font-weight: lighter;
+}
+
+#start_form button {
+    width: 20%;
+    height: 5vw;
+    background-color: #f57b54;
+    color: #331818;
+    text-shadow: 0;
+    border: none;
+    box-shadow: -1vw 0 0 0 #fe9558,
+        -2vw 0 0 0 #fec458,
+        1vw 0 0 0 #f1603c,
+        2vw 0 0 0 #f14a3c;
+    transition: color 0.15s, text-shadow 0.15s, box-shadow 0.15s ease-in-out;
+    border-radius: 5vw;
+    font-family: 'Henny Penny', cursive;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+#start_form button:hover {
+    cursor: pointer;
+    box-shadow: -1vw 0 0 0 #fe9558,
+        -2vw 0 0 0 #fec458,
+        1vw 0 0 0 #f1603c,
+        2vw 0 0 0 #f14a3c,
+        0 0 5vw 0.5vw #fee958;
+    color: #fee958;
+    text-shadow: 0 0 3px #fee958;
+}
