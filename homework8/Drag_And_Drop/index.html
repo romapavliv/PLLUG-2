@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag And Drop</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <script type="text/javascript" src="./scripts/main.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="drag-and-drop-container">
+            <p class="bold-text">Drag & drop files here</p>
+            <p>or</p>
+            <form class="drag-and-drop-form">
+                <label for="file-input">Browse files</label><br />
+                <input id="file-input" type="file" accept=".png, .jpg, .jpeg, .txt, .csv" multiple/>
+            </form>
+        </div>
+        <div class="preview-container"></div>
+    </div>
+</body>
+</html>
