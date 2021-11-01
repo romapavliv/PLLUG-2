@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#left-container {
+    position: absolute;
+    width: 15%;
+    height: fit-content;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #d1d1d1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 3%;
+}
+
+#colors {
+    height: fit-content;
+    margin: 15% 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 1vw;
+    place-items: center;
+}
+
+.color {
+    height: 3.5vw;
+    width: 3.5vw;
+    border-radius: 50%;
+}
+
+.color:hover {
+    cursor: pointer;
+}
+
+#red {
+    background-color: red;
+    border: 1px solid red;
+}
+
+#orange {
+    background-color: orange;
+    border: 1px solid orange;
+}
+
+#yellow {
+    background-color: yellow;
+    border: 1px solid yellow;
+}
+
+#green {
+    background-color: green;
+    border: 1px solid green;
+}
+
+#skyblue {
+    background-color: skyblue;
+    border: 1px solid skyblue;
+}
+
+#blue {
+    background-color: blue;
+    border: 1px solid blue;
+}
+
+#purple {
+    background-color: purple;
+    border: 1px solid purple;
+}
+
+#white {
+    background-color: white;
+    border: 1px solid silver;
+}
+
+#grey {
+    background-color: grey;
+    background-color: grey;
+}
+
+#black {
+    background-color: black;
+    background-color: black;
+}
+
+#figures {
+    height: fit-content;
+    margin: 15% 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 1vw;
+    place-items: center;
+}
+
+.figure {
+    height: 4vw;
+    width: 4vw;
+    background-position: center;
+    background-size: contain;
+    image-rendering: crisp-edges;
+}
+
+.figure:hover {
+    cursor: pointer;
+}
+
+#pencil {
+    background-image: url("../images/pencil.png");
+}
+
+#line {
+    background-image: url("../images/line.png");
+}
+
+#circle {
+    background-image: url("../images/circle.png");
+}
+
+#rectangle {
+    background-image: url("../images/rectangle.png");
+}
+
+#triangle {
+    background-image: url("../images/triangle.png");
+}
+
+#star {
+    background-image: url("../images/star.png");
+}
+
+#cloud {
+    background-image: url("../images/cloud.png");
+}
+
+#eraser {
+    background-image: url("../images/eraser.png");
+}
+
+#top-container {
+    position: absolute;
+    width: 85%;
+    height: 10%;
+    top: 0;
+    right: 0;
+    background-color: #d1d1d1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 3%;
+}
+
+#sizes {
+    height: fit-content;
+    margin-left: 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 1vw;
+    place-items: center;
+}
+
+.size {
+    height: 3vw;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.size:hover {
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    background-color: black;
+}
+
+#px1 {
+    height: 1px;
+}
+
+#px2 {
+    height: 2px;
+}
+
+#px5 {
+    height: 5px;
+}
+
+#px10 {
+    height: 10px;
+}
+
+#px25 {
+    height: 25px;
+}
+
+#fillings {
+    height: fit-content;
+    margin: 1% 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1vw;
+    place-items: center;
+}
+
+.filling {
+    height: 4vw;
+    width: 8vw;
+    border: 5px solid black;
+}
+
+.filling:hover {
+    cursor: pointer;
+}
+
+#fill {
+    background-color: black;
+}
+
+.button {
+    width: 6vw;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+    cursor: pointer;
+    font-size: 2.2vw;
+}
+
+.canvas {
+    position: absolute;
+    width: 85%;
+    height: 90%;
+    top: 10%;
+    left: 15%;
+    border: 1px solid #3d3d3d;
+}
+
+@media only screen and (max-width: 768px) {
+    #left-container {
+        width: 100%;
+        height: 10%;
+        top: 0;
+        left: 0;
+    }
+
+    #top-container {
+        width: 100%;
+        height: 10%;
+        top: 10%;
+        left: 0;
+    }
+
+    .canvas {
+        width: 100%;
+        height: 80%;
+        top: 20%;
+        left: 0;
+    }
+}
