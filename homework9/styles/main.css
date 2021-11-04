@@ -1,0 +1,247 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    height: 100%;
+    width: 45%;
+    text-align: center;
+}
+
+#tracker-name {
+    margin: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+#tasks-form {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid grey;
+    padding: 2px;
+    border-radius: 5vw;
+}
+
+#tasks-input {
+    flex-grow: 2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4vw;
+    padding: 2%;
+    border-radius: 5vw;
+    border: none;
+    box-sizing: border-box;
+}
+
+#tasks-input:focus {
+    outline: none;
+}
+
+#tasks-button {
+    width: 3.5vw;
+    height: 3.5vw;
+    border: 1px solid #3cb371;
+    background: #3cb371;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#triangle {
+    border-top: 1vw solid transparent;
+    border-left: 1.5vw solid white;
+    border-bottom: 1vw solid transparent;
+    margin-left: 33%;
+}
+
+#triangle:hover {
+    cursor: pointer;
+}
+
+#tasks-list {
+    margin-top: 5%;
+    width: 100%;
+    height: 60%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.task {
+    min-height: 5vw;
+    background-color: #f8fff7;
+    border-top: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.task-name, .timer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4vw;
+    font-weight: bold;
+    text-align: left;
+}
+
+.task-name {
+    flex-grow: 2;
+    margin-left: 2%;
+    color: #3cb371;
+}
+
+.timer {
+    margin-left: 2%;
+    color: #3cb371;
+}
+
+.pause-button:hover, .delete-button:hover, .pause-button-active:hover {
+    cursor: pointer;
+}
+
+.pause-button, .pause-button-active, .delete-button {
+    height: 2vw;
+    width: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 0.1s ease-in-out;
+}
+
+.pause-button {
+    margin-left: 2%;
+    background-image: url("../images/pause.png");  
+}
+
+.pause-button:active {
+    background-image: url("../images/pause-active.png");
+}
+
+.pause-button-active {
+    margin-left: 2%;
+    background-image: url("../images/pause-active.png");
+}
+
+.delete-button {
+    margin: 0 2%;
+    background-image: url("../images/delete.png");
+}
+
+.delete-button:active {
+    background-image: url("../images/delete-active.png");
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+    #container {
+        width: 100%;
+    }
+
+    #tracker-name {
+        margin: 8%;
+        font-size: 6vw;
+    }
+    
+    #tasks-form {
+        margin: 0 2%;
+        padding: 3px;
+    }
+    
+    #tasks-input {
+        font-size: 3vw;
+    }
+    
+    #tasks-button {
+        width: 8vw;
+        height: 8vw;
+    }
+    
+    #triangle {
+        border-top: 2vw solid transparent;
+        border-left: 3.2vw solid white;
+        border-bottom: 2vw solid transparent;
+        margin-left: 35%;
+    }
+    
+    #tasks-list {
+        margin-top: 4%;
+        height: 52%;
+    }
+    
+    .task {
+        min-height: 10vw;
+    }
+    
+    .task-name, .timer {
+        font-size: 3.2vw;
+    }
+    
+    .pause-button, .pause-button-active, .delete-button {
+        height: 4vw;
+        width: 4vw;
+    }
+}
+
+@media screen and (max-width: 480.9px){
+    #container {
+        width: 100%;
+    }
+
+    #tracker-name {
+        margin: 15%;
+        font-size: 10vw;
+    }
+    
+    #tasks-form {
+        margin: 0 1%;
+        border-radius: 9vw;
+        padding: 3px;
+    }
+    
+    #tasks-input {
+        font-size: 5vw;
+        padding: 3%;
+    }
+    
+    #tasks-button {
+        width: 12vw;
+        height: 12vw;
+    }
+    
+    #triangle {
+        border-top: 3vw solid transparent;
+        border-left: 5.2vw solid white;
+        border-bottom: 3vw solid transparent;
+        margin-left: 34%;
+    }
+    
+    #tasks-list {
+        margin-top: 8%;
+        height: 52%;
+    }
+    
+    .task {
+        min-height: 15vw;
+    }
+    
+    .task-name, .timer {
+        font-size: 4.5vw;
+    }
+    
+    .pause-button, .pause-button-active, .delete-button {
+        height: 6vw;
+        width: 6vw;
+    }
+}
+

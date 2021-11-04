@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task tracker</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/main.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="tracker-name">task tracker</div>
+        <form id="tasks-form" action="javascript:createTask();">
+            <input id="tasks-input" type="text" placeholder="Enter task name here">
+            <button id="tasks-button">
+                <div id="triangle"></div>
+            </button>
+        </form>
+        <div id="tasks-list"></div>
+    </div>
+</body>
+
+</html>
