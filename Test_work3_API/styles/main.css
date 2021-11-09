@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#page-title {
+    margin: 3% 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#container {
+    margin: 1%;
+    font-size: 1.4rem;
+}
+
+#places {
+    margin-top: 1%;
+    font-size: 1.4rem;
+}
+
+.text, #submit-button {
+    margin: 3% 0 1% 0;
+}
+
+.labels {
+    margin-right: 3%;
+}
+
+#submit {
+    padding: 0.2%;
+    font-size: 1.4rem;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+img.hue-change { 
+    filter: hue-rotate(140deg); 
+}
