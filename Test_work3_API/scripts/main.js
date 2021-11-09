@@ -5,12 +5,17 @@ function addMarker(map, placeData) {
 }
 
 function setMap(requestData, responseData) {
+    const mapContainer = L.DomUtil.get("show-map");
+    if (mapContainer != null) {
+        mapContainer.outerHTML = "<div id='show-map'></div>";
+    }
+
     const mapOptions = {
         center: [requestData["lat"], requestData["lng"]],
         zoom: 10
     }
 
-    const map = new L.map("map", mapOptions);
+    const map = new L.map("show-map", mapOptions);
     const layer = new L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");
     map.addLayer(layer);
 
@@ -59,7 +64,7 @@ async function sendData(requestData, responceType) {
 
 function userLocation(requestData, responceType) {
     function success(position) {
-        const status = document.querySelector('#map');
+        const status = document.querySelector('#show-map');
         status.textContent = 'Ваше місцезнаходження успішно визначено.';
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
@@ -76,7 +81,7 @@ function userLocation(requestData, responceType) {
         alert("Geolocation не підтримується вашим браузером.");
     }
     else {
-        const status = document.querySelector('#map');
+        const status = document.querySelector('#show-map');
         status.textContent = 'Визначаємо місцезнаходження…';
         navigator.geolocation.getCurrentPosition(success, error);
     }
@@ -94,7 +99,6 @@ function getChosenValue(inputsContainer) {
 }
 
 function checkForm() {
-
     const placesList = document.querySelector("#places");
     const chosenPlace = placesList.value;
     if (chosenPlace === "hidden") {
@@ -114,11 +118,6 @@ function checkForm() {
     if (chosenResponceType === "") {
         alert("Будь ласка, оберіть тип відповіді.")
         return;
-    }
-
-    const mapContainer = L.DomUtil.get("map");
-    if (mapContainer != null) {
-        mapContainer._leaflet_id = null;
     }
 
     const requestData = new Object();
