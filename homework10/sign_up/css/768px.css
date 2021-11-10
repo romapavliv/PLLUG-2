@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes smoothPageAppearance {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    animation: 1s ease-in 0s 1 smoothPageAppearance;
+}
+
+#left_block {
+    flex: 50%;
+    color: white;
+    background-image: url('../images/Mask Group 43.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+#right_block {
+    flex: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#right_block h1 {
+    color: #8D8DA5;
+}
+
+#logo {
+    margin: 8%;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.7vw;
+}
+
+#logo h1::first-letter {
+    color: #E2222D;
+}
+
+#info {
+    margin: 8%;
+    margin-top: 7vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2vw;
+    font-weight: 200;
+}
+
+#info h2 {
+    font-size: 1.75vw;
+    font-weight: 400;
+}
+
+#sign_up {
+    height: fit-content;
+    width: 55%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8vw;
+}
+
+.title {
+    font-size: 2.6vw;
+    padding-bottom: 1.8vw;
+    font-weight: 500;
+}
+
+.labels {
+    font-size: 1.1vw;
+    font-weight: 500;
+    color: #181C32;
+}
+
+.inputs {
+    box-sizing: border-box;
+    width: 100%;
+    height: 3.5vw;
+    margin: 0.4vw 0;
+    padding: 1.1vw 1.1vw;
+    border-radius: 0.6vw;
+    border: 1px solid #DBDFEB;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.1vw;
+}
+
+.buttons-links-block {
+    width: 100%;
+    margin-top: 1.2vw;
+    text-align: center;
+}
+
+#sign_up_button {
+    width: 40%;
+    height: 3.5vw;
+    background-color: #E2222D;
+    color: white;
+    border: none;
+    border-radius: 0.6vw;
+    transition: background-color 0.2s;
+    transition: font-size 0.2s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1vw;
+    font-weight: 500;
+}
+
+#sign_up_button:hover {
+    cursor: pointer;
+    font-size: 1.25vw;
+    transition: font-size 0.2s;
+}
+
+#sign_up_button:active {
+    background-color: #B61C24;
+    transition: background-color 0.2s;
+}
+
+#sign_in_link {
+    color: #181C32;
+    font-size: 1.1vw;
+    font-weight: 500;
+}

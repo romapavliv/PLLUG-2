@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes smoothPageAppearance {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+    animation: 1s ease-in 0s 1 smoothPageAppearance;
+}
+
+#left_block {
+    flex: 50%;
+    color: white;
+    background-image: url('../images/Mask Group 43.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#right_block {
+    flex: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#right_block h1 {
+    color: #181C32;
+}
+
+#logo {
+    margin: 9%;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.25vw;
+}
+
+#logo h1::first-letter {
+    color: #E2222D;
+}
+
+#info {
+    margin: 9%;
+    margin-top: 10vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9vw;
+    font-weight: 200;
+}
+
+#info h2 {
+    font-size: 1.25vw;
+    font-weight: 400;
+}
+
+#email_send {
+    height: fit-content;
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7vw;
+}
+
+.title {
+    font-size: 2vw;
+    padding-bottom: 1.5vw;
+    font-weight: 500;
+}
+
+.message {
+    font-size: 0.8vw;
+    font-weight: 400;
+    color: #8D8DA5;
+}
+
+#email {
+    text-decoration: underline;
+}
+
+.button-block {
+    width: 100%;
+    margin-top: 1vw;
+}
+
+#go_to_sign_in_button {
+    width: 38%;
+    height: 2.7vw;
+    background-color: #E2222D;
+    color: white;
+    border: none;
+    border-radius: 0.4vw;
+    transition: background-color 0.2s;
+    transition: font-size 0.2s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75vw;
+    font-weight: 300;
+}
+
+#go_to_sign_in_button:hover {
+    cursor: pointer;
+    font-size: 0.9vw;
+    transition: font-size 0.2s;
+}
+
+#go_to_sign_in_button:active {
+    background-color: #B61C24;
+    transition: background-color 0.2s;
+}
+
+#here_link {
+    color: #181C32;
+    font-size: 0.75vw;
+    font-weight: 500;
+}
