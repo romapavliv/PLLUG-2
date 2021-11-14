@@ -17,49 +17,70 @@
 </head>
 
 <body>
-    <div id="page-title">Знайди, що тобі потрібно!</div>
+    <div id="filer">
+        <div id="page-title">Знайди, що тобі потрібно!</div>
 
-    <div id="container">
-        <form id="request" action="javascript:checkForm();" method="post">
-            <select id="places">
-                <option value="hidden" hidden>Виберіть заклад</option>
-                <option value="restaurant">Ресторан</option>
-                <option value="museum">Музей</option>
-                <option value="hotel">Готель</option>
-                <option value="coffee">Кафе</option>
-                <option value="McDonalds">McDonalds</option>
-            </select>
+        <div id="container">
+            <form id="request" action="javascript:checkForm();" method="post">
+                <p class="text">Виберіть заклад:</p>
+                <select id="places">
+                    <option value="hidden" hidden>Виберіть заклад</option>
+                    <option value="restaurant">Ресторан</option>
+                    <option value="museum">Музей</option>
+                    <option value="hotel">Готель</option>
+                    <option value="coffee">Кафе</option>
+                    <option value="McDonalds">McDonalds</option>
+                </select>
 
-            <p class="text">Виберіть відстань:</p>
-            <div id="distances">
-                <input type="radio" id="distance1" name="distance" value="500">
-                <label for="distance1" class="labels">0.5 км</label>
-                <input type="radio" id="distance2" name="distance" value="1000">
-                <label for="distance2" class="labels">1 км</label>
-                <input type="radio" id="distance3" name="distance" value="5000">
-                <label for="distance3" class="labels">5 км</label>
-                <input type="radio" id="distance4" name="distance" value="10000">
-                <label for="distance4" class="labels">10 км</label>
-                <input type="radio" id="distance5" name="distance" value="20000">
-                <label for="distance5" class="labels">20 км</label>
-                <input type="radio" id="distance6" name="distance" value="50000">
-                <label for="distance6" class="labels">50 км</label>
-                <input type="radio" id="distance7" name="distance" value="100000">
-                <label for="distance7" class="labels">100 км</label>
-            </div>
+                <p class="text">Виберіть відстань:</p>
+                <div id="distances">
+                    <div class="inline-div">
+                        <input type="radio" id="distance1" name="distance" class="distance" value="500">
+                        <label for="distance1" class="labels">0.5 км</label>
+                    </div>
+                    <div class="inline-div">
+                        <input type="radio" id="distance2" name="distance" class="distance" value="1000">
+                        <label for="distance2" class="labels">1 км</label>
+                    </div>
+                    <div class="inline-div">
+                        <input type="radio" id="distance3" name="distance" class="distance" value="5000">
+                        <label for="distance3" class="labels">5 км</label>
+                    </div>
+                    <div class="inline-div">
+                        <input type="radio" id="distance4" name="distance" class="distance" value="10000">
+                        <label for="distance4" class="labels">10 км</label>
+                    </div>
+                    <div class="inline-div">
+                        <input type="radio" id="distance5" name="distance" class="distance" value="20000">
+                        <label for="distance5" class="labels">20 км</label>
+                    </div>
+                    <div class="inline-div">
+                        <input type="radio" id="distance6" name="distance" class="distance" value="50000">
+                        <label for="distance6" class="labels">50 км</label>
+                    </div>
+                    <div class="inline-div">
+                        <input type="radio" id="distance7" name="distance" class="distance" value="100000">
+                        <label for="distance7" class="labels">100 км</label>
+                    </div>
+                </div>
 
-            <p class="text">Виберіть тип відповіді:</p>
-            <div id="responce-types">
-                <input type="radio" id="map-radio" name="response-type" value="map">
-                <label for="map-radio" class="labels">Map</label>
-                <input type="radio" id="csv-radio" name="response-type" value="csv">
-                <label for="csv-radio" class="labels">Csv</label>
-            </div>
+                <p class="text">Виберіть тип відповіді:</p>
+                <div id="response-types">
+                    <div class="inline-div">
+                        <input type="radio" id="map-radio" name="response-type" class="response-type" value="map">
+                        <label for="map-radio" class="labels">Map</label>
+                    </div>
+                    <div class="inline-div">
+                        <input type="radio" id="csv-radio" name="response-type" class="response-type" value="csv">
+                        <label for="csv-radio" class="labels">Csv</label>
+                    </div>
+                </div>
 
-            <div id="submit-button">
-                <button type="submit" id="submit">Надіслати</button>
-            </div>
-        </form>
+                <div id="submit-button">
+                    <button type="submit" id="submit">Надіслати</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <div id="show-map"></div>

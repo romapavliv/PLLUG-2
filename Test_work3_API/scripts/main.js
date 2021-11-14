@@ -1,3 +1,33 @@
+function removeCheckedClass(elementsList, checkedElementIndex) {
+    let elementsArray = [...elementsList];
+    elementsArray.splice(checkedElementIndex, 1);
+    elementsArray.forEach((element) => {
+        const parentElement = element.parentElement;
+        if(parentElement.classList.contains("inline-div-checked")) {
+            parentElement.classList.remove("inline-div-checked");
+        }
+    });
+}
+
+function addCheckedClass(elementsList) {
+    [...elementsList].forEach((element, index) => {
+        element.addEventListener("change", (event) => {
+            const parentElement = event.currentTarget.parentElement;
+            if(event.currentTarget.checked) {
+                parentElement.classList.add("inline-div-checked");
+                removeCheckedClass(elementsList, index);
+            }
+        });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const distanceInputs = document.querySelectorAll(".distance");
+    const responseTypeInpits = document.querySelectorAll(".response-type");
+    addCheckedClass(distanceInputs);
+    addCheckedClass(responseTypeInpits);
+});
+
 function addMarker(map, placeData) {
     const marker = new L.marker([placeData["lat"], placeData["lng"]]);
     marker.bindPopup(`<b>${placeData["name"]}</b>`).openPopup();
@@ -37,8 +67,8 @@ function setCsv(responseData) {
     hiddenElement.click();
 }
 
-async function sendData(requestData, responceType) {
-    const url = responceType === "map" ? "http://198.199.125.240:8888/search" : "http://198.199.125.240:8888/csv";
+async function sendData(requestData, responseType) {
+    const url = responseType === "map" ? "http://198.199.125.240:8888/search" : "http://198.199.125.240:8888/csv";
     try {
         const response = await fetch(url, {
             method: 'POST',
@@ -48,7 +78,7 @@ async function sendData(requestData, responceType) {
             },
             body: JSON.stringify(requestData)
         });
-        if (responceType === "map") {
+        if (responseType === "map") {
             const responseData = await response.json();
             setMap(requestData, responseData);
         }
@@ -62,7 +92,7 @@ async function sendData(requestData, responceType) {
     }
 }
 
-function userLocation(requestData, responceType) {
+function userLocation(requestData, responseType) {
     function success(position) {
         const status = document.querySelector('#show-map');
         status.textContent = 'Ваше місцезнаходження успішно визначено.';
@@ -70,7 +100,7 @@ function userLocation(requestData, responceType) {
         const longitude = position.coords.longitude;
         requestData["lat"] = latitude;
         requestData["lng"] = longitude;
-        sendData(requestData, responceType);
+        sendData(requestData, responseType);
     }
 
     function error() {
@@ -113,9 +143,9 @@ function checkForm() {
         return;
     }
 
-    const responceTypesContainer = document.querySelector("#responce-types");
-    const chosenResponceType = getChosenValue(responceTypesContainer);
-    if (chosenResponceType === "") {
+    const responseTypesContainer = document.querySelector("#response-types");
+    const chosenResponseType = getChosenValue(responseTypesContainer);
+    if (chosenResponseType === "") {
         alert("Будь ласка, оберіть тип відповіді.")
         return;
     }
@@ -124,5 +154,5 @@ function checkForm() {
     requestData["query"] = chosenPlace;
     requestData["radius"] = chosenDistance;
 
-    userLocation(requestData, chosenResponceType);
+    userLocation(requestData, chosenResponseType);
 }
