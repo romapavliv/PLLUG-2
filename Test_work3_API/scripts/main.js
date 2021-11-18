@@ -156,3 +156,5 @@ function checkForm() {
 
     userLocation(requestData, chosenResponseType);
 }
+
+Завдання виконано
